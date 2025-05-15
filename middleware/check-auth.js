@@ -11,7 +11,7 @@ export default (req, res, next) => {
         if (!token) {
             throw new Error('Echec d Authentification !');
         }
-        const decodedToken = jwt.verify(token, process.env.JWT_KEY); // on verifie le token avec la clé secrète
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET); // on verifie le token avec la clé secrète
         req.userData = { userId: decodedToken.userId };
         next(); // on passe à la suite du traitement de la requête
     } catch (err) {

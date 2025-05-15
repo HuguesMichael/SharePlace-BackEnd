@@ -8,7 +8,7 @@ import HttpError from './models/http-error.js';
 import mongoose from 'mongoose';
 import cors from 'cors'; // Importation de cors pour gérer les problèmes de CORS
 const app= express();
-const port =5000;
+const port = process.env.PORT || 5000;
 app.use(cors()); // Utilisation de cors pour gérer les problèmes de CORS
 /* Middleware pour contourner l' erreur  "Access to fetch at 'http://localhost:5000/api/users/signup' 
 from origin 'http://localhost:3000' has been blocked by CORS policy ..." visible dans la console du navigateur */
